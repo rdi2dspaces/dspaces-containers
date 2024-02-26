@@ -69,6 +69,3 @@ RUN pip3 install bitstring s3fs dill numpy netcdf4 mpi4py netCDF4
 RUN add-apt-repository ppa:git-core/ppa -y
 
 RUN apt-get update && apt-get install -y git
-
-ENTRYPOINT [ "/entrypoint.sh" ]
-CMD [ "/bin/bash" ]
