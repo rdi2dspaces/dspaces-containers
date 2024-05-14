@@ -1,3 +1,3 @@
-FROM philipdavis/dspaces-build:v27022024
+FROM philipdavis/dspaces-build:v01032024
 
 RUN pip install jupyterlab

@@ -1,6 +1,6 @@
-FROM philipdavis/dspaces-deps:jammy
+FROM philipdavis/dspaces-deps:v29022024
 
-ARG REPO_BRANCH=netcdf
+ARG REPO_BRANCH=master
 RUN mkdir -p /build/dataspaces
 RUN mkdir -p /opt/dspaces
 RUN . /opt/spack-environment/activate.sh \   
@@ -11,11 +11,11 @@ RUN . /opt/spack-environment/activate.sh \
 RUN { \
       echo '#!/bin/sh' \
       && echo '.' /opt/spack-environment/activate.sh \
-      && echo "export CMAKE_PREFIX_PATH=/opt/dspaces/:${CMAKE_PREFIX_PATH}" \
-      && echo "export LD_LIBRARY_PATH=/opt/dspaces/lib:${LD_LIBRARY_PATH}" \
-      && echo "export PATH=/opt/dspaces/bin:${PATH}" \
-      && echo "export PKG_CONFIG_PATH=/opt/dspaces/lib/pkgconfig:${PKG_CONFIG_PATH}" \
-      && echo "export PYTHONPATH=/opt/dspaces/lib/python3/dist-packages:${PYTHONPATH}" \
+      && echo 'export CMAKE_PREFIX_PATH=/opt/dspaces/:${CMAKE_PREFIX_PATH}' \
+      && echo 'export LD_LIBRARY_PATH=/opt/dspaces/lib:${LD_LIBRARY_PATH}' \
+      && echo 'export PATH=/opt/dspaces/bin:${PATH}' \
+      && echo 'export PKG_CONFIG_PATH=/opt/dspaces/lib/pkgconfig:${PKG_CONFIG_PATH}' \
+      && echo 'export PYTHONPATH=/opt/dspaces/lib/python3/dist-packages:${PYTHONPATH}' \
       && echo 'exec "$@"'; \
     } > /entrypoint.sh \
 && chmod a+x /entrypoint.sh 

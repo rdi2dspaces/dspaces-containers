@@ -8,8 +8,23 @@ set -o noclobber \
 &&  (echo spack: \
 &&   echo '  # add package specs to the `specs` list' \
 &&   echo '  specs:' \
-&&   echo '  - mochi-margo@0.9.10 ^mercury@2.1.0~boostsys ^libfabric@1.16.1' \
+&&   echo '  - mochi-margo@0.14.1 ^mercury~boostsys@2.3.1 ^libfabric@1.19.0' \
 &&   echo '  view: /opt/views/view' \
+&&   echo '  compilers: ' \
+&&   echo '  - compiler: ' \
+&&   echo '      spec: gcc@=11.4.0' \
+&&   echo '      paths:' \
+&&   echo '        cc: /usr/bin/gcc' \
+&&   echo '        cxx: /usr/bin/g++' \
+&&   echo '        f77: /usr/bin/gfortran' \
+&&   echo '        fc: /usr/bin/gfortran' \
+&&   echo '      flags: ' \
+&&   echo '        cflags: -g' \
+&&   echo '      operating_system: ubuntu22.04' \
+&&   echo '      target: x86_64' \
+&&   echo '      modules: []' \
+&&   echo '      environment: {}' \
+&&   echo '      extra_rpaths: []' \
 &&   echo '  concretizer:' \
 &&   echo '    unify: true' \
 &&   echo '  config:' \
