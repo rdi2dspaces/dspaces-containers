@@ -79,7 +79,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y \
     liblz4-dev \
     jq
     
-RUN pip3 install bitstring s3fs dill numpy netcdf4 mpi4py netCDF4
+RUN pip3 install bitstring s3fs dill numpy netcdf4 mpi4py netCDF4 xarray planetary_computer pystac_client fsspec
 
 RUN add-apt-repository ppa:git-core/ppa -y
 

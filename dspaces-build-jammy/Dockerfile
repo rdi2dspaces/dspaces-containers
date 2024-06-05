@@ -1,4 +1,4 @@
-FROM philipdavis/dspaces-deps:v29022024
+FROM philipdavis/dspaces-deps:v23052024
 
 ARG REPO_BRANCH=master
 RUN mkdir -p /build/dataspaces

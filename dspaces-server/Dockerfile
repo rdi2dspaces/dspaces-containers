@@ -1,9 +1,10 @@
-FROM philipdavis/dspaces-deps:v29022024
+FROM philipdavis/dspaces-deps:v23052024
 
 RUN mkdir -p /install/dspaces
 RUN touch dataspaces.conf
 
 RUN apt-get update && apt upgrade -y
+RUN apt-get install -y netcat
 
 CMD . /opt/spack-environment/activate.sh \
     && git clone https://github.com/rdi2dspaces/dspaces \
