@@ -1,4 +1,4 @@
-FROM philipdavis/dspaces-deps:v23052024
+FROM philipdavis/dspaces-deps:v19072024
 
 RUN mkdir -p /install/dspaces
 RUN touch dataspaces.conf
